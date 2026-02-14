@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Valentine 💖</title>
+</head>
+
+<body style="margin:0; text-align:center; font-family:Arial; background:pink;">
+
+    <h1 id="question">Will you be my Valentine? 💖</h1>
+
+    <div id="buttons">
+        <button onclick="sayYes()" style="font-size:20px;">YES 💗</button>
+        <button onclick="sayNo()" style="font-size:20px;">NO 💔</button>
+    </div>
+
+    <!-- Comic message -->
+    <h2 id="comicText" style="color:red;"></h2>
+
+    <!-- Final love message -->
+    <h1 id="finalText"
+        style="display:none; color:white; position:absolute; top:20px; width:100%; font-size:35px;">
+        Love you forever 💞
+    </h1>
+
+    <!-- Image -->
+    <img id="loveImage" src="/IMG_20260214_102647.png"
+         style="display:none; width:100%; height:100vh; object-fit:cover;">
+
+    <script>
+        function sayYes() {
+            document.getElementById("question").style.display = "none";
+            document.getElementById("buttons").style.display = "none";
+            document.getElementById("comicText").style.display = "none";
+            document.getElementById("loveImage").style.display = "block";
+            document.getElementById("finalText").style.display = "block";
+        }
+
+        var messages = [
+            "Are you sure? 😢",
+            "Think again! 🥺",
+            "Pleaseeee 💔",
+            "I will wait ❤️",
+            "Don’t break my heart 💞"
+        ];
+
+        var index = 0;
+
+        function sayNo() {
+            document.getElementById("comicText").innerText = messages[index];
+            index++;
+
+            if (index >= messages.length) {
+                index = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+ 
